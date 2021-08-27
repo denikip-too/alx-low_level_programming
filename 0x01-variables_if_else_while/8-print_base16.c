@@ -11,6 +11,6 @@ for (x = 48; x < 58; x++)
 putchar(x);
 for (x = 'a'; x <= 'f'; x++)
 putchar(x);
-putchr('\n');
+putchar('\n');
 return (0);
 }
