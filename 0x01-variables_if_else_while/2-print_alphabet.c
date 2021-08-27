@@ -6,10 +6,9 @@
 */
 int main(void)
 {
-for(char x = 'A'; x <= 'Z'; x++)
+for(char x = 'a'; x <= 'z'; x++)
 {
-char lower_x = tolower(x);
-putchar(lower_x);
+putchar(x);
 }
 putchar('\n');
 return (0);
