@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include "main.h"
 /**
 * main - pronts string
 * Description: prints Holberton
