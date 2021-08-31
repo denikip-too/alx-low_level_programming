@@ -3,7 +3,7 @@
 * print_to_98 - prints all natural numbers
 * @y: first number
 */
-void print_to_98(int n)
+void print_to_98(int y)
 {
 int x;
 if (y <= 98)
