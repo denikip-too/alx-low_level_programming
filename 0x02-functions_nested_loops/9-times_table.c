@@ -18,7 +18,7 @@ if (y == 0)
 _putchar(48);
 continue;
 }
-z = x * y;
+z = (x * y);
 _putchar(',');
 _putchar(' ');
 if (z >= 10)
@@ -31,8 +31,8 @@ else
 _putchar(' ');
 _putchar(z + 48);
 }
+}
 x++;
 }
 _putchar('\n');
-}
 }
