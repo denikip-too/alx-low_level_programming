@@ -8,11 +8,12 @@ void times_table(void)
 int x;
 int y;
 int z;
-for (x = 0; x < 10; x++)
+x = 0;
+while (x < 10)
 {
 for (y = 0; y < 10; y++)
 {
-if (x == 0 || y == 0)
+if (y == 0)
 {
 _putchar(48);
 continue;
@@ -30,8 +31,9 @@ else
 _putchar(' ');
 _putchar(z + 48);
 }
-}
+x++;
 }
 _putchar('\n');
+}
 }
       
