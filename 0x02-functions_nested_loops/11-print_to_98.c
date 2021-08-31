@@ -10,14 +10,14 @@ if (y <= 98)
 {
 for (x = y; x < 98; x++)
 {
-putchar(x);
+printf("%i, ", x);
 }
 }
 else
 {
 for (x = y; x > 98; x--)
 {
-putchar(x);
+printf("%i, ",x);
 }
 }
 putchar('\n');
