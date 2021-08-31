@@ -1,8 +1,7 @@
-#include "holberton.h"
 #include "main.h"
 /**
-* main - pronts string
-* Description: prints Holberton
+* main - prints string
+* Description: prints "Holberton"
 * Return: 0
 */
 int main(void)
