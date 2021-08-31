@@ -31,8 +31,8 @@ else
 _putchar(' ');
 _putchar(z + 48);
 }
-}
 x++;
 }
 _putchar('\n');
-}      
+}
+}
