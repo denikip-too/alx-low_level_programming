@@ -17,8 +17,8 @@ else
 {
 for (x = y; x > 98; x--)
 {
-printf("%i, ",x);
+printf("%i, ", x);
 }
 }
-putchar('\n');
+printf("98\n");
 }
