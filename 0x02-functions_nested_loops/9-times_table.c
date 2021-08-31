@@ -8,11 +8,11 @@ void times_table(void)
 int x;
 int y;
 int z;
-for (x = 0; x < 10; x++
+for (x = 0; x < 10; x++)
 {
 for (y = 0; y < 10; y++)
 {
-if (x == 0)
+if (x == 0 || y == 0)
 {
 _putchar(48);
 continue;
@@ -32,5 +32,6 @@ _putchar(z + 48);
 }
 }
 }
+_putchar('\n');
 }
       
