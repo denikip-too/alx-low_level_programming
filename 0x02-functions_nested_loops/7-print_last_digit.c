@@ -11,12 +11,12 @@ if (n >= 0)
 {
 last_digit = n % 10;
 _putchar(last_digit + 48);
-return (last_digit);
+return (last_digit + 48);
 }
 else
 {
 last_digit = (n * -1) % 10;
 _putchar(last_digit + 48);
-return (last_digit);
+return (last_digit + 48);
 }
 }
