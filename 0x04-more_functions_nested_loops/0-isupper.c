@@ -2,7 +2,6 @@
 
 /**
 * _isupper - checks for uppercase characters
-* Description: function that checks for uppercase character
 * @c: interger
 * Return: 0
 */
