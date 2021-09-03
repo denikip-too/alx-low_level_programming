@@ -5,14 +5,15 @@
 */
 void print_triangle(int size)
 {
-int b;
+int a, b;
+a = size;
 if (size <= 0)
 {
 _putchar('\n');
 }
-while (size <= 0)
+while (size > 0)
 {
-for (b = 0; b < size; b++)
+for (b = 0; b < a; b++)
 {
 _putchar((b < size - 1) ? ' ' : '#');
 }
