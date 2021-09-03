@@ -8,7 +8,7 @@ int a, b;
 a = 1;
 while (a <= 10)
 {
-for (b = o; b <= 14; b++)
+for (b = 0; b <= 14; b++)
 {
 if (b >= 10)
 {
