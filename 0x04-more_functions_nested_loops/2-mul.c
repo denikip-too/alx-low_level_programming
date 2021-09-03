@@ -7,7 +7,5 @@
 */
 int mul(int a, int b)
 {
-int multipication;
-multiplication = a * b;
-return (multiplication);
+return (a * b);
 }
