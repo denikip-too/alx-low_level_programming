@@ -2,6 +2,10 @@
 #include <stdio.h>
 /**
 * main - prints the numbers, Fizz, Buzz, FizzBuzz
+* prints "Buzz" for multiple of 5
+* prints "Fizz" for multiples of 3
+* prints "FizzBuzz" for multiples of both 3and 5
+* for numbers 1 - 100
 * Return: 0
 */
 int main(void)
