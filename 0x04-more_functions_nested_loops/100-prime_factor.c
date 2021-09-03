@@ -19,7 +19,8 @@ else
 {
 maxFact = n;
 n = n / div;
-if (n == 1) {
+if (n == 1)
+{
 printf("%d", maxFact);
 break;
 }
