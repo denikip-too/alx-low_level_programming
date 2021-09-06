@@ -21,4 +21,4 @@ int size = _strlen(s);
 while (size--)
 _putchar(*(s + size));
 _putchar('\n');
-}  
+}
