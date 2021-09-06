@@ -1,11 +1,9 @@
 #include "main.h"
-
 /**
  * mapint - maps a character to its integer form
  * @a: character to be mapped
  * Return: the integer version of the char
  */
-
 int mapint(char a)
 {
 	if (a >= 48 && a <= 57)
