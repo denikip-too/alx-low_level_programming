@@ -9,6 +9,7 @@
 int numLength(int num)
 {
 	int length = 0;
+
 	if (!num)
 	{
 		return (1);
@@ -56,5 +57,5 @@ int main(void)
 			printf("\n");
 		i++;
 	}
-	return(0);
+	return (0);
 }
