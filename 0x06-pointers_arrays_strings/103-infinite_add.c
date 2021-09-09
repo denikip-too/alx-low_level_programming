@@ -53,7 +53,7 @@ void printnchar(int n)
 	}
 	num = n;
 	length = numLength(num), j = length - 1, k, digit1, tmp2;
-
+	
 	if (num == 0)
 		_putchar(48);
 	else
