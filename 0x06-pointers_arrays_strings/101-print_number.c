@@ -54,7 +54,6 @@ void printnchar(int n)
 	num = n;
 	length = numLength(num);
 	j = length - 1;
-
 	if (num == 0)
 		_putchar(48);
 	else
