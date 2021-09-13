@@ -1,4 +1,5 @@
 #include "main.h"
+#define NULL 0
 
 /**
  * *_strstr -  locates a substring
@@ -9,16 +10,31 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i;
+	int i = 0, j, x;
 
-	i = 0;
-	while (haystack[i] >= '\0')
+	if (needle[0] == '\0')
+		return (haystack);
+
+	while (haystack[i] != '\0') /* iterate through haystack */
 	{
-		if (haystack[i] == *needle)
+		/* if a byte matches first char of needle */
+		/* interate through needle until match ends */
+		if (haystack[i] == needle[0])
 		{
-			return (haystack + i);
+			x = i, j = 0;
+			while (needle[j] != '\0')
+			{
+				if (haystack[x] == needle[j])
+					x++, j++;
+				else
+								break;
+			} /* if matched throughout, return haystack */
+			if (needle[j] == '\0')
+			{
+				return (haystack + i);
+			}
 		}
-		haystack++;
+		i++;
 	}
-	return ('\0');
+	return (NULL); /* No match */
 }
