@@ -5,7 +5,7 @@
  * @c: buffer to print
  * @s: bytes of buffer to print
  * @l: line of buffer to print
- *
+ * Description: prints a buffer
  * Return: void
  */
 void print_line(char *c, int s, int l)
