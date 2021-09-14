@@ -1,96 +1,45 @@
 #include "main.h"
-
 /**
- * powB - raises the number base to power power
- * @base : the base
- * @power : the power
- * Return: return the answer
+ * infinite_add - adds two numbers
+ * @n1: first number
+ * @n2: second number
+ * @r: buffer for result
+ * @size_r: buffer size
+ *
+ * Return: address of r or 0
  */
-int powB(unsigned int base, int power)
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, prod = 1;
-
-	for (i = 0; i < power; i++)
-	{
-		prod = prod * base;
-	}
-	return (prod);
+int i, j, k, l, m, n;
+for (i = 0; n1[i]; i++)
+;
+for (j = 0; n2[j]; j++)
+;
+if (i > size_r || j > size_r)
+return (0);
+m = 0;
+for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+{
+n = m;
+if (i >= 0)
+n += n1[i] - '0';
+if (j >= 0)
+n += n2[j] - '0';
+if (i < 0 && j < 0 && n == 0)
+{
+break;
 }
-
-/**
- * numLength - returns the lenth of string
- * @num : operand number
- * Return: number of digits
- */
-
-int numLength(unsigned int num)
-{
-	int length = 0;
-
-	if (!num)
-		return (1);
-	while (num)
-	{
-		num = num / 10;
-		length += 1;
-	}
-	return (length);
+m = n / 10;
+r[k] = n % 10 + '0';
 }
-
-/**
- * printnchar - Print a number of any digit
- * @n : takes an input number
- */
-void printnchar(int n)
+r[k] = '\0';
+if (i >= 0 || j >= 0 || m)
+return (0);
+for (k -= 1, l = 0; l < k; k--, l++)
 {
-	int length, j, k, digit1, tmp2;
-	unsigned int num;
-
-	if (n < 0)
-	{
-		n *= -1;
-		_putchar('-');
-	}
-	num = n;
-	length = numLength(num), j = length - 1, k, digit1, tmp2;
-	
-	if (num == 0)
-		_putchar(48);
-	else
-	{
-		while (j >= 0)
-		{
-			if (num % powB(10, j) == 0 && j != 0)
-			{
-				_putchar(48 + num / powB(10, j));
-				for (k = j; k > 0; k--)
-					_putchar(48);
-				j = -1;
-			}
-			else
-			{
-				digit1 = num / powB(10, j);
-				_putchar(digit1 + 48);
-				tmp2 = num;
-				num -= powB(10, j) * digit1;
-
-				if (numLength(tmp2) - numLength(num) == 2)
-				{
-					_putchar(48);
-					j--;
-				}
-				j--;
-			}
-		}
-	}
+m = r[k];
+r[k] = r[l];
+r[l] = m;
 }
-
-/**
- * print_number - prints out any integer with only _putchar
- * @n: integer to be printed
- * Return: 0
- */
-void print_number(int n)
-{
-	printnchar(n);
+return (r);
 }
