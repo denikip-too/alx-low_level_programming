@@ -10,10 +10,10 @@ int floorSqrt(int x, int i)
 {
 	if (x == 0 || x == 1)
 	{
-		return x;
+		return (x);
 	}
 	if (i * i == x)
-        {
+	{
 		return (i);
 	}
 	if (i * i > x)
