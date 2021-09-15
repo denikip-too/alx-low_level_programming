@@ -1,22 +1,18 @@
 #include "main.h"
 
 /**
-* _strlen - returns length of string
+* _strlen_recursion - returns length of string
 * Description: function that returns the length of a string
 * @s: character whose length will be returned
 * Return: length of the string
 */
-int _strlen(char *s)
+int _strlen_recursion(char *s)
 {
-	int i;
-
-	i = 0;
-	while (*s)
+	if (*s == '\0')
 	{
-		i += 1;
-		s++;
+		return (0);
 	}
-	return (i);
+	return (1 + _strlen_recursion(s + 1));
 }
 /**
  * isPalindrome - checks if string is palindrome
@@ -48,7 +44,7 @@ int isPalindrome(char *s, int i, int j)
  */
 int is_palindrome(char *s)
 {
-	int n = _strlen(s);
+	int n = _strlen_recursion(s);
 
 	if (n == 0)
 	{
