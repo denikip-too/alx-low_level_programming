@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * floorSqrt - finds square root
+ * findSqrt - finds square root
  * @x: number
  * @i: iterator
  * Return: result
  */
-int floorSqrt(int x, int i)
+int findSqrt(int x, int i)
 {
 	if (x == 0 || x == 1)
 	{
@@ -20,7 +20,7 @@ int floorSqrt(int x, int i)
 	{
 		return (-1);
 	}
-	return (floorSqrt(x, i + 1));
+	return (findSqrt(x, i + 1));
 }
 /**
  * _sqrt_recursion - returns the natural square root of a number
@@ -33,5 +33,5 @@ int _sqrt_recursion(int n)
 	{
 		return (-1);
 	}
-	return (floorSqrt(n, 1));
+	return (findSqrt(n, 1));
 }
