@@ -50,5 +50,9 @@ int is_palindrome(char *s)
 {
 	int n = _strlen(s);
 
+	if (n == 0)
+	{
+		return (1);
+	}
 	return (isPalindrome(s, 0, n - 1));
 }
