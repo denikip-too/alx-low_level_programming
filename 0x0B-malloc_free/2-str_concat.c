@@ -23,7 +23,6 @@ int _strlen(char *s)
  */
 char *str_concat(char *s1, char *s2)
 {
-	int n = _strlen(s1) + _strlen(s2);
 	char *s3, *s4;
 
 	if (s1 == NULL)
@@ -34,8 +33,8 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	s3 = malloc(sizeof(char) * n + 1);
-	if (s3 == NULL)
+	s3 = malloc(sizeof(char) * (_strlen(s1) + _strlen(s2)) + 1);
+	if (!s3)
 	{
 		return (NULL);
 	}
