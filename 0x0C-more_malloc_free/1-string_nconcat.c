@@ -47,16 +47,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		return (NULL);
 	}
-	i = 0;
-	while (i < l2)
+	for (i = 0; i < l2; i++)
 	{
 		p[i] = s1[i];
-		i++;
 	}
-	while (i < (l2 + n))
+	for (; i < (l2 + n; i++))
 	{
 		p[i] = s2[i - l2];
-		i++;
 	}
 	p[n + l2] = '\0';
 	return (p);
