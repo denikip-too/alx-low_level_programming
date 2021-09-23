@@ -10,6 +10,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int *ptr;
+	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 	{
@@ -19,6 +20,12 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (!ptr)
 	{
 		return (NULL);
+	}
+	i = 0;
+	while (i < (nmemb * size))
+	{
+		ptr[i] = 0;
+		i++;
 	}
 	return (ptr);
 }
