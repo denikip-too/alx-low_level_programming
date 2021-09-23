@@ -51,7 +51,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		p[i] = s1[i];
 	}
-	for (; i < (l2 + n; i++))
+	for (; i < (l2 + n); i++)
 	{
 		p[i] = s2[i - l2];
 	}
