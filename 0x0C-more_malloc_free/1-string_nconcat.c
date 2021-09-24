@@ -6,9 +6,7 @@
  * @s1: first string
  * @s2: second string
  * @n: size of memory allocated for s2 in bytes
- * Return: pointer shall point to a newly allocated space in
- * memory, which contains s1, followed by the first n bytes of
- * s2, and null terminated or NULL
+ * Return: pointer to new string
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
