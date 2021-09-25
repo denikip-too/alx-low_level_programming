@@ -15,8 +15,10 @@ int _isdigit(int num)
 	return (1);
 }
 /**
- * main - multiplies two positive numbers
- * Return - result, followed by a new line
+ * main - multiplies two positive numbers and print result
+ * @argc: input count of args
+ * @argv: input array of string args
+ * Return: 0, success
  */
 int main(int argc, char *argv[])
 {
@@ -31,7 +33,7 @@ int main(int argc, char *argv[])
 		_putchar('o');
 		_putchar('r');
 		_putchar('\n');
-		exit (98);
+		exit(98);
 	}
 	if (argc == 3)
 	{
@@ -47,7 +49,7 @@ int main(int argc, char *argv[])
 			_purchar('o');
 			_purchar('r');
 			_purchar('\n');
-			exit (98);
+			exit(98);
 		}
 		else
 		{
