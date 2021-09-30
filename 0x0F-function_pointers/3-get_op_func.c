@@ -20,11 +20,11 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 
 	i = 0;
-	while (i < 5)
+	while (op_s[i].op)
 	{
-		if (!strcmp(ops[i].op, s))
+		if (*(op_s[i].op) == s)
 		{
-			return (ops[i].f);
+			return (op_s[i].f);
 		}
 		i++;
 	}
