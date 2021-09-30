@@ -8,7 +8,8 @@
  */
 void print_all(const char * const format, ...)
 {
-	char *pas, *str = "";
+	char *pas = "";
+	char *str;
 	unsigned int i = 0;
 	va_list arguments;
 
@@ -30,7 +31,7 @@ void print_all(const char * const format, ...)
 					break;
 				case 's':
 					str = va_arg(arguments, char *);
-					if (str == NULL)
+					if (!str)
 					{
 						str = "(nil)";
 					}
