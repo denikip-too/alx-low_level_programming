@@ -4,15 +4,21 @@
 
 /**
  * _isdigit - Check if input is only numbers
- * @num: Given input to check
+ * @argv: Given input to check
  *
  * Return: 1 if a number, 0 if otherwise
  */
-int _isdigit(int num)
+int _isdigit(char *argv)
 {
-	if (num < '0' || num > '9')
-		return (0);
-	return (1);
+	int i;
+
+	for (i = 0; argv[i]; i++)
+	{
+		if (argv[i] < '0' || argv[i] > '9')
+			return (0);
+		return (1);
+	}
+	return (0);
 }
 /**
  * main - multiplies two positive numbers and print result
@@ -22,40 +28,24 @@ int _isdigit(int num)
  */
 int main(int argc, char *argv[])
 {
-	int i;
+	int i, num1, num2, mul;
 
-	malloc();
 	if (argc != 3)
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		printf("Error\n");
 		exit(98);
 	}
-	if (argc == 3)
+	for (i = 1; i < argc; i++)
 	{
-		int mult, num1, num2;
-
-		num1 = atoi(argv[1]);
-		num2 = atoi(argv[2]);
-		if (!(_isdigit(num1) || _isdigit(num2)))
+		if (!(_isdigit(argv[i])))
 		{
-			_purchar('E');
-			_purchar('r');
-			_purchar('r');
-			_purchar('o');
-			_purchar('r');
-			_purchar('\n');
+			printf("Error\n");
 			exit(98);
 		}
-		else
-		{
-			mult = num1 * num2;
-			_putchar(mult);
-		}
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[2]);
+		mul = num1 * num2;
+		printf("%d\n", mul);
 	}
 	return (0);
 }
