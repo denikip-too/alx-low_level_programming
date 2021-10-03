@@ -42,14 +42,14 @@ int main(int argc, char *argv[])
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			if (argv[i][j] < '0' && argv[i][j] > '9')
+			if ((argv[i][j]) <'0' && (argv[i][j]) > '9')
 			{
 				printf("Error\n"), exit(98);
 			}
 		}
 	}
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
+	num1 = atol(argv[1]);
+	num2 = atol(argv[2]);
 	mul = num1 * num2;
 	printf("%lu\n", mul);
 	return (0);
