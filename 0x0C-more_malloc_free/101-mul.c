@@ -3,26 +3,6 @@
 #include "main.h"
 
 /**
- * _isdigit - Check if input is only numbers
- * @argv: Given input to check
- *
- * Return: 1 if a number, 0 if otherwise
- */
-int _isdigit(char *argv)
-{
-	int i;
-
-	i = 0;
-	while (argv[i])
-	{
-		if (argv[i] >= '0' && argv[i] <= '9')
-			i++;
-		else
-			return (1);
-	}
-	return (0);
-}
-/**
  * main - multiplies two positive numbers and print result
  * @argc: input count of args
  * @argv: input array of string args
