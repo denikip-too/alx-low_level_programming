@@ -30,21 +30,27 @@ int _isdigit(char *argv)
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, mul;
+	unsigned long mul;
+	int i, j, num1, num2;
 
 	if (argc != 3)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (_isdigit(argv[1]) || _isdigit(argv[2]))
+	for (i = 0; i < argc; i++)
 	{
-		printf("Error\n");
-		exit(98);
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] < '0' && argv[i][j] > '9')
+			{
+				printf("Error\n"), exit(98);
+			}
+		}
 	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 	mul = num1 * num2;
-	printf("%d\n", mul);
+	printf("%lu\n", mul);
 	return (0);
 }
