@@ -4,7 +4,7 @@
 
 /**
  * _strlen - prints length of the string
- * @h: variable pointing to the head of the list
+ * @h: string
  * Return: number of nodes
  */
 int _strlen(char *h)
@@ -33,7 +33,16 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 	new_node = malloc(sizeof(list_t));
+	if (!new_node)
+	{
+		return (NULL);
+	}
 	s = strdup(str);
+	if (!s)
+	{
+		free(new_node);
+		return (NULL);
+	}
 	new_node->len = _strlen(s);
 	new_node->str = s;
 	new_node->next = (*head);
