@@ -10,28 +10,28 @@ listint_t *find_listint_loop(listint_t *head)
 	listint_t *current = head;
 	listint_t *temp = head;
 
-	while (current && temp && temp->next)
+	while (head && current && current->next)
 	{
-		current = current->next;
-		temp = temp->next->next;
-		if (current == temp)
+		head = head->next;
+		current = current->next->next;
+		if (head == current)
 		{
-			current = temp;
+			head = temp;
 			temp = current;
 			while (1)
 			{
 				current = temp;
 				while (current->next != head && current->next != temp)
 				{
-					temp = temp->next;
+					current = current->next;
 				}
-				if (temp->next == head)
+				if (current->next == head)
 				{
 					break;
 				}
-				current = current->next;
+				head = head->next;
 			}
-			return (temp->next);
+			return (current->next);
 		}
 	}
 	return (NULL);
