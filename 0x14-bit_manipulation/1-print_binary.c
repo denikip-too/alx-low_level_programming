@@ -1,6 +1,6 @@
 #include "main.h"
 
-/** 
+/**
  * powx - powers a number b to p's power
  * @b: base
  * @p: power
@@ -8,14 +8,14 @@
  */
 unsigned long int powx(int b, int p)
 {
-        unsigned long int ans = 1;
+	unsigned long int ans = 1;
 
-        while (p)
-        {
-                ans *= b;
-                p--;
-        }
-        return (ans);
+	while (p)
+	{
+		ans *= b;
+		p--;
+	}
+	return (ans);
 }
 /**
  * print_binary - prints the binary representation of a number
