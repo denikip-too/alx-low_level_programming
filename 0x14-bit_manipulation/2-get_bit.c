@@ -8,14 +8,14 @@
  */
 unsigned long int powx(int b, int p)
 {
-        unsigned long int ans = 1;
+	unsigned long int ans = 1;
 
-        while (p)
-        {
-                ans *= b;
-                p--;
-        }
-        return (ans);
+	while (p)
+	{
+		ans *= b;
+		p--;
+	}
+	return (ans);
 }
 /**
  * get_bit - returns the value of a bit at a given index
