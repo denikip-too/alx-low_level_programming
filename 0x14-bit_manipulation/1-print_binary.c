@@ -23,7 +23,7 @@ unsigned long int powx(int b, int p)
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int i = powx(2, sizeof(unsigned long int) * 31);
+	unsigned long int i = powx(2, sizeof(unsigned long int) * BIT_SIZE - 1);
 	int j = 0;
 
 	if (n == 0)
@@ -33,11 +33,11 @@ void print_binary(unsigned long int n)
 	}
 	while (i)
 	{
-		if (!(n & i) && j)
+		if (!(i & n) && j)
 		{
 			_putchar('0');
 		}
-		else if (n & i)
+		else if (i & n)
 		{
 			_putchar('1');
 			j = 1;
