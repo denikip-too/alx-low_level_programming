@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	op1 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	r = read(op, buf, 1024);
 	w = write(op1, buf, r);
-	if (r != -1)
+	while (r != -1)
 	{
 		if (op1 == -1 || w != r)
 		{
