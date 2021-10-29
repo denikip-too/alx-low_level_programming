@@ -9,9 +9,9 @@
  */
 int main(int argc, char *argv[])
 {
-	int op, op1;
+	int op, op1, c1, c2;
 	int w, r;
-	char *buf[1024];
+	char buf[1024];
 
 	if (argc != 3)
 	{
@@ -30,23 +30,25 @@ int main(int argc, char *argv[])
 	}
 	r = read(op, buf, 1024);
 	w = write(op1, buf, r);
-	while (r != 0)
+	while (r > 0)
 	{
-		if (r == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
-		if (w == -1)
+		if (op1 < 0 || w != r)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 		}
 	}
-	if ((close(op)) == -1)
+	if (r < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	c1 = close(op);
+	if (c1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", op), exit(100);
 	}
-	if ((close(op1)) == -1)
+	c2 = close(op1);
+	if (c2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", op1), exit(100);
 	}
