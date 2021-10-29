@@ -26,14 +26,14 @@ int main(int argc, char *argv[])
 	op1 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	r = read(op, buf, 1024);
 	w = write(op1, buf, r);
-	while(r != 0)
+	while (r != 0)
 	{
-		if (r != 0)
+		if (r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-		if (w != 1)
+		if (w == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 		}
