@@ -24,13 +24,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	idx = key_index((unsigned char *)key, ht->size);
 	temp = ht->array[idx];
 	while (temp)
+	{
 		if (strcmp(temp->key, key) == 0)
+		{
 			free(temp->value);
 			temp->value = temp_val;
 			temp->value = strdup(value);
 			free(temp_val);
 			return (1);
+		}
 		temp = temp->next;
+	}
 	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
 		free(new);
