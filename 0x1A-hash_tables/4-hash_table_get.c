@@ -8,22 +8,22 @@
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int hash = hash_djb2((const unsigned char *)key);
+	unsigned long int hash;
 	size_t index;
 
-	index = (hash & (ht->size - 1));
 	if (key == NULL)
-		return (NULL);
-	while (ht->array[index]->key != NULL)
+                return (NULL);
+	if (ht != NULL)
 	{
-		if (strcmp(key, ht->array[index]->key) == 0)
+		hash = hash_djb2((const unsigned char *)key);
+		index = (hash & (ht->size - 1));
+		while (ht->array[index] != NULL)
 		{
-			return ht->array[index]->value;
-		}
-		index++;
-		if (index >= ht->size)
-		{
-			index = 0;
+			if (strcmp(key, ht->array[index]->key) == 0)
+			{
+				return ht->array[index]->value;
+			}
+			index++;
 		}
 	}
 	return (NULL);
