@@ -4,7 +4,8 @@
  * *hash_table_get - retrieves a value associated with a key
  * @ht: is the hash table you want to look into
  * @key: is the key you are looking for
- * Return: value associated with the element, or NULL if key couldn’t be found
+ * Return: value associated with the element,
+ * or NULL if key couldn’t be found
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
@@ -12,7 +13,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	size_t index;
 
 	if (key == NULL)
-                return (NULL);
+		return (NULL);
 	if (ht != NULL)
 	{
 		hash = hash_djb2((const unsigned char *)key);
@@ -21,7 +22,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		{
 			if (strcmp(key, ht->array[index]->key) == 0)
 			{
-				return ht->array[index]->value;
+				return (ht->array[index]->value);
 			}
 			index++;
 		}
