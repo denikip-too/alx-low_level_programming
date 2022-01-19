@@ -12,18 +12,19 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int hash;
 	size_t index;
 
-	if (ht != NULL)
+	if (ht == NULL)
 	{
-		hash = hash_djb2((const unsigned char *)key);
-		index = (hash & (ht->size - 1));
-		while (ht->array[index] != NULL)
+		return NULL;
+	}
+	hash = hash_djb2((const unsigned char *)key);
+	index = (hash & (ht->size - 1));
+	while (ht->array[index] != NULL)
+	{
+		if (strcmp(ht->array[index]->key, key) == 0)
 		{
-			if (strcmp(ht->array[index]->key, key) == 0)
-			{
-				return (ht->array[index]->value);
-			}
-			index++;
+			return (ht->array[index]->value);
 		}
+		index++;
 	}
 	return (NULL);
 }
