@@ -3,7 +3,7 @@ SRC=$(wildcard *.c)
 OBJ=$(SRC:%.c=%.o)
 NAME=school
 CFLAGS=-Wall -Werror -Wextra -pedantic
-all: $(OBJ)
+all: $(OBJ) m.h
 	$(CC) $< -o $(NAME)
 clean:
 	$(RM) *~ $(NAME)
