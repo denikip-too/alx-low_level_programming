@@ -11,26 +11,14 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-        size_t l, mid, r, i;
+	size_t l, mid, r, i;
 
-        l = 0;
+	l = 0;
         r = size - 1;
         if (array == NULL)
                 return (-1);
         while (l <= r)
         {
-                printf("Searching in array: ");
-                for (i = l; i <= r; i++)
-                {
-                        if (i != r)
-                        {
-                                printf("%d, ", array[i]);
-                        }
-                        else
-                        {
-                                printf("%d\n", array[r]);
-                        }
-                }
                 mid = floor((l + r) / 2);
                 if (array[mid] < value)
                 {
@@ -44,9 +32,23 @@ int binary_search(int *array, size_t size, int value)
                 {
                         return (mid);
                 }
+		printf("Searching in array: ");
+                for (i = l; i <= r; i++)
+                {
+                        if (i != r)
+                        {
+                                printf("%d, ", array[i]);
+                        }
+                        else
+                        {
+                                printf("%d\n", array[r]);
+                        }
+                }
         }
+	printf("\n");
         return (-1);
 }
+
 /**
  * exponential_search - searches for a value in a sorted array of integers using
  * the Exponential search algorithm
